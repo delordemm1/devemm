@@ -41,7 +41,7 @@ func New(url, publicPath, manifestDirectory, hotProxyURL string) (*Manifest, err
 		entries:     entries,
 	}
 	m.manifestDirectory = m.pathPrefix(manifestDirectory)
-	m.manifestPath = m.publicPath + m.manifestDirectory + "/manifest.json"
+	m.manifestPath = m.getManifestPath(m.publicPath + m.manifestDirectory)
 	content, err := os.ReadFile(m.manifestPath)
 	if err != nil {
 		return nil, err
@@ -87,7 +87,8 @@ func (m *Manifest) Hash(manifestDirectory string) (string, error) {
 
 // HashFromFS function.
 func (m *Manifest) HashFromFS(manifestDirectory string, staticFS fs.FS) (string, error) {
-	file, err := staticFS.Open(strings.TrimPrefix(m.manifestPath, "/"))
+	file, err := staticFS.Open(m.getManifestPath(manifestDirectory))
+	// file, err := staticFS.Open(strings.TrimPrefix(m.manifestPath, "/"))
 	if err != nil {
 		return "", err
 	}
@@ -155,6 +156,9 @@ func (m *Manifest) GetStyles(name string) string {
 	return links
 }
 
+func (m *Manifest) getManifestPath(path string) string {
+	return path + "/manifest.json"
+}
 func (m *Manifest) buildPath(path string) string {
 	return m.url + m.manifestDirectory + m.pathPrefix(path)
 }

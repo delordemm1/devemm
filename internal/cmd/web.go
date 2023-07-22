@@ -1,7 +1,9 @@
 package cmd
 
-import "github.com/delordemm1/devemm-go/internal/web"
+import (
+	"github.com/delordemm1/devemm-go/internal/web"
+)
 
-func WebServe() {
-	web.Serve(true, ":4001", "http://localhost:4001")
+func WebServe(debug bool, addr, url string) {
+	web.Serve(debug, addr, url)
 }

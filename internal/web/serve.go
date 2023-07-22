@@ -38,7 +38,6 @@ func Serve(debug bool, addr, url string) {
 }
 func newMixAndInertiaManager(debug bool, url string) (*vite.Manifest, *inertia.Inertia, error) {
 	viteManager, _ := vite.New("", "./static", "build", "")
-
 	var version string
 	var err error
 

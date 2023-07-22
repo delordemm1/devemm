@@ -14,5 +14,8 @@ migratedown:
 
 sqlc: 
 	sqlc generate
+
+web:
+	go run main.go web serve -production=false
 	
-.PHONY: createdb migrateup migratedown sqlc
+.PHONY: createdb migrateup migratedown sqlc web

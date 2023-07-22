@@ -15,7 +15,20 @@ migratedown:
 sqlc: 
 	sqlc generate
 
-web:
-	go run main.go web serve -production=false
+dev:
+	go run main.go web serve
+
+pre_build:
+	rm -rf bin
+	mkdir bin
+
+build_linux: pre_build
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o bin/web .
 	
-.PHONY: createdb migrateup migratedown sqlc web
+build_windows: pre_build
+	CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -o bin/web.exe .
+
+build_darwin: pre_build
+	CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -o bin/web .
+	
+.PHONY: createdb migrateup migratedown sqlc dev build_linux build_windows build_darwin

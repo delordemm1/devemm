@@ -29,18 +29,8 @@ func main() {
 	flag.Parse()
 	log.Printf("appDebug %v", appDebug)
 	switch os.Args[1] {
-	case "web":
-		if len(os.Args) < 3 {
-			printUsage()
-			os.Exit(1)
-		}
-		switch os.Args[2] {
-		case "serve":
-			cmd.WebServe(appDebug, fmt.Sprintf(":%s", *appPort), fmt.Sprintf("http://localhost:%s", *appPort))
-		default:
-			printUsage()
-			os.Exit(1)
-		}
+	case "serve":
+		cmd.WebServe(appDebug, fmt.Sprintf(":%s", *appPort), fmt.Sprintf("http://localhost:%s", *appPort))
 
 	default:
 		printUsage()
@@ -51,5 +41,5 @@ func main() {
 
 func printUsage() {
 	fmt.Println("Usage:")
-	fmt.Println("  web serve - Run web server")
+	fmt.Println("  serve - Run web server")
 }

@@ -1,0 +1,8 @@
+github.com/justinas/alice v1.2.0 h1:+MHSA/vccVCF4Uq37S42jwlkvI2Xzl7zTPCN5BnZNVo=
+github.com/justinas/alice v1.2.0/go.mod h1:fN5HRH/reO/zrUflLfTN43t3vXvKzvZIENsNEe7i7qA=
+github.com/petaki/inertia-go v1.5.0 h1:ab5iyBVdAAMIHvAhTOG5UTCIkYnJQ/SuIFiKQm6eDYU=
+github.com/petaki/inertia-go v1.5.0/go.mod h1:0oATJU1bvDxYjCDE2Sms4j33hdMqePlpZ3cAIUvzPeA=
+github.com/petaki/support-go v1.7.0 h1:ufkAtV9quMOgKj+748PIkG65UxeEut0gKbkm6SNgCWI=
+github.com/petaki/support-go v1.7.0/go.mod h1:hY+fCu0dAG5XJnTdzzIW2e+gkyq2nBLuFVrhbDs0QP4=
+github.com/torenware/vite-go v0.5.6 h1:4TrnG0lBOTESqE4nGzKgZTsmvgFnGvIcGQ6cRhdktuU=
+github.com/torenware/vite-go v0.5.6/go.mod h1:tP33iI/kEQhR8TyowBjooxvp8kpHGA82eXuuI7apszc=

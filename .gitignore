@@ -11,6 +11,7 @@ vite.config.ts.timestamp-*
 hot
 /static/build
 /bin/
+/logs/
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
